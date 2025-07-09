@@ -80,4 +80,16 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
+// GET /api/admin/view-staff
+router.get('/view-staff', async (req, res) => {
+  try {
+    const staff = await User.find({ role: { $ne: 'admin' } }).select('-password');
+    res.json(staff);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch staff' });
+  }
+});
+
+
 module.exports = router;

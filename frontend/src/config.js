@@ -10,7 +10,8 @@ const config = {
   endpoints: {
     auth: {
       login: '/api/auth/login',
-      register: '/api/auth/register'
+      register: '/api/auth/register',
+      viewStaff: '/api/auth/view-staff'
     },
     leave: {
       apply: '/api/leave/apply',
